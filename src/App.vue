@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header/>
   <div class="container">
     <Balance :total="+total" />
     <IncomeExpenses :income="+income" :expenses="+expenses" />
@@ -74,7 +74,9 @@ const generateId = () => {
 
 //delete transaction
 const handleTransactionDeleted = (id) => {
-  console.log(id);
+  transactions.value = transactions.value.filter((transaction) => transaction.id !== id);
+
+  toast.success('Transaction deleted')
 }
 
 
